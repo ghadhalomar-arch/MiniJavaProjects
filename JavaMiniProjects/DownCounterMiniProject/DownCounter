@@ -1,0 +1,76 @@
+package gui2;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class CounterGUI implements ActionListener {
+
+    private JFrame frame = new JFrame();
+    private JPanel panel1 = new JPanel();
+    private JLabel label = new JLabel("Counter");
+    private int count = 0;
+    private JTextField txt = new JTextField("    " + count);
+    private JRadioButton rUp = new JRadioButton("up ");
+    private JRadioButton rDown = new JRadioButton("down ");
+    private ButtonGroup group = new ButtonGroup();
+    private Integer[] values = {1, 2, 3, 4, 5, 6};
+    private JComboBox<Integer> combo = new JComboBox<>(values);
+    private JButton countButton = new JButton("count");
+    private boolean up = false;
+    private boolean down = false;
+
+    public CounterGUI() {
+
+        frame.setLayout(new FlowLayout());
+        panel1.setLayout(new FlowLayout());
+
+        panel1.add(label);
+        panel1.add(txt);
+        panel1.add(rUp);
+        panel1.add(rDown);
+        txt.setEditable(false);
+        group.add(rUp);
+        group.add(rDown);
+        panel1.add(combo);
+        panel1.add(countButton);
+        frame.add(panel1);
+        frame.setSize(300, 300);
+        frame.setVisible(true);
+
+        rUp.addActionListener(this);
+        rDown.addActionListener(this);
+        combo.addActionListener(this);
+        countButton.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+
+        if (command.equals("up ")) {
+            up = true;
+            down = false;
+        }
+        if (up) {
+            if (command.equals("count")) {
+                count += (int) combo.getSelectedItem();
+                txt.setText(count + " ");
+            }
+        }
+        if (command.equals("down ")) {
+            down = true;
+            up = false;
+        }
+        if (down) {
+            if (command.equals("count")) {
+                count -= (int) combo.getSelectedItem();
+                txt.setText(count + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new CounterGUI();
+    }
+}

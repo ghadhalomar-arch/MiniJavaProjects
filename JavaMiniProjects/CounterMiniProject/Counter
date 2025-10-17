@@ -1,0 +1,44 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Counter implements ActionListener {
+
+    private JFrame frame = new JFrame();
+    private JPanel panel1 = new JPanel();
+    private JPanel panel2 = new JPanel();
+    private JLabel label = new JLabel("Counter");
+    private int count;
+
+    private JTextField textField = new JTextField("        " + count + "      ");
+    private JButton incrementButton = new JButton("Inc");
+
+    public Counter() {
+
+        frame.setLayout(new GridLayout(2, 1));
+        panel1.setLayout(new FlowLayout());
+        panel2.setLayout(new FlowLayout());
+
+        panel1.add(label);
+        panel1.add(textField);
+        panel2.add(incrementButton);
+        incrementButton.addActionListener(this);
+        frame.add(panel1);
+        frame.add(panel2);
+        frame.setTitle("Counter");
+
+        frame.setSize(320, 120);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        textField.setText(++count + "      ");
+    }
+
+    public static void main(String[] args) {
+        new Counter();
+    }
+
+}
