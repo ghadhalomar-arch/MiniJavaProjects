@@ -7,3 +7,15 @@ public class LinearSearch {
         }
         return -1; // not found
     }
+
+    // Linear search in linked list
+    public int search(int target) {
+        Node current = head;
+        int index = 0;
+        while (current != null) {
+            if (current.data == target) {
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
