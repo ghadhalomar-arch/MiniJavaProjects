@@ -19,3 +19,20 @@ public class BooleanSearch {
         return -1; // not found
     }
 }
+// Binary search for linked list
+    public Node binarySearch(int target) {
+        Node start = head;
+        Node end = null;
+
+        while (start != end) {
+            Node mid = getMiddle(start, end);
+
+            if (mid.data == target)
+                return mid;
+            else if (mid.data < target)
+                start = mid.next;
+            else
+                end = mid;
+        }
+        return null; // not found
+    }
