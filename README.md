@@ -55,3 +55,6 @@ Object-oriented programming (OOP), generics, arrays, and linked lists.
 1. Clone this repository:
    ```bash
    git clone https://github.com/ghadhalomar-arch/MiniJavaProjects.git
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
