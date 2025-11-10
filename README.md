@@ -46,7 +46,7 @@ Object-oriented programming (OOP), generics, arrays, and linked lists.
 
 ## 🛠️ Technologies
 - **Language:** Java SE (8 or higher)
-- **IDE:** NetBeans / IntelliJ IDEA / Eclipse
+- **IDE:** NetBeans / IntelliJ IDEA / Eclipse / VSCode
 - **Libraries:** Standard Java API only (no external dependencies)
 
 ---
